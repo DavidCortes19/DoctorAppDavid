@@ -1,3 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Estilo personalizado para la barra de acción -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Cambia el color de fondo de la barra de acción -->
+        <item name="android:background">#9C27B0</item>
+
+        <!-- Cambia el color del título de la barra de acción (texto) -->
+        <item name="android:color">#E11010</item>
+
+        <!-- Cambia el color de los íconos de la barra de acción (iconos) -->
+        <item name="colorControlNormal">#00BCD4</item>
+
+        <!-- Cambia el color del botón de navegación de la barra de acción (el icono del menú) -->
+        <item name="android:textColorPrimary">#FF9800</item>
+    </style>
 </resources>

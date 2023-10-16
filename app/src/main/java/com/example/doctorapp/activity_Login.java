@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast; // Agregado para mostrar mensajes de Toast
+import android.widget.Toast;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class activity_Login extends AppCompatActivity {
@@ -33,20 +33,20 @@ public class activity_Login extends AppCompatActivity {
                     String email = emailTextInputLayout.getEditText().getText().toString().trim();
                     String password = passwordTextInputLayout.getEditText().getText().toString().trim();
 
-                    // Verifica el correo electrónico y la contraseña específicos
-                    if (email.equals("d") && password.equals("1")) {
+                    // Aquí debes implementar la lógica para verificar las credenciales
+                    if (isValidCredentials(email, password)) {
                         // Iniciar sesión exitosamente
                         startActivity(new Intent(activity_Login.this, DashboardActivity.class));
                         // Muestra un mensaje de confirmación
                         Toast.makeText(activity_Login.this, "¡Iniciaste sesión correctamente!", Toast.LENGTH_SHORT).show();
-
                     } else {
-                        // Muestra un mensaje de error si las creqdenciales son incorrectas
+                        // Muestra un mensaje de error si las credenciales son incorrectas
                         Toast.makeText(activity_Login.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
+
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,28 +56,33 @@ public class activity_Login extends AppCompatActivity {
         });
     }
 
+    // Función para validar los campos del formulario de inicio de sesión
+    private boolean validateForm() {
+        boolean isValid = true;
 
+        String email = emailTextInputLayout.getEditText().getText().toString().trim();
+        String password = passwordTextInputLayout.getEditText().getText().toString().trim();
 
-        private boolean validateForm() {
-            boolean isValid = true;
-
-            String email = emailTextInputLayout.getEditText().getText().toString().trim();
-            String password = passwordTextInputLayout.getEditText().getText().toString().trim();
-
-            if (TextUtils.isEmpty(email)) {
-                emailTextInputLayout.setError("Este campo es requerido");
-                isValid = false;
-            } else {
-                emailTextInputLayout.setError(null);
-            }
-
-            if (TextUtils.isEmpty(password)) {
-                passwordTextInputLayout.setError("Este campo es requerido");
-                isValid = false;
-            } else {
-                passwordTextInputLayout.setError(null);
-            }
-
-            return isValid;
+        if (TextUtils.isEmpty(email)) {
+            emailTextInputLayout.setError("Este campo es requerido");
+            isValid = false;
+        } else {
+            emailTextInputLayout.setError(null);
         }
+
+        if (TextUtils.isEmpty(password)) {
+            passwordTextInputLayout.setError("Este campo es requerido");
+            isValid = false;
+        } else {
+            passwordTextInputLayout.setError(null);
+        }
+
+        return isValid;
     }
+
+    // Función para verificar las credenciales (aquí debes implementar tu lógica de verificación)
+    private boolean isValidCredentials(String email, String password) {
+        // Ejemplo de verificación de credenciales (reemplázalo con tu lógica)
+        return email.equals("david") && password.equals("1");
+    }
+}

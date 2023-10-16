@@ -34,11 +34,14 @@
         android:layout_marginTop="2dp"
         android:layout_height="wrap_content">
 
-        <ImageView
+
+        <Button
             android:id="@+id/menubtn"
             android:layout_width="45dp"
-            android:src="@drawable/menu"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/menu" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -108,7 +111,7 @@
 
                <LinearLayout
                    android:layout_width="match_parent"
-                   android:layout_height="181dp"
+                   android:layout_height="match_parent"
                    android:background="@drawable/card1_style"
                    android:gravity="center"
                    android:orientation="vertical"
@@ -116,16 +119,24 @@
                    android:paddingVertical="15dp">
 
                    <ImageView
+                       android:id="@+id/cardView"
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
+                       android:layout_marginBottom="10dp"
                        android:src="@drawable/heart" />
 
                    <Button
                        android:id="@+id/CirugiadeCorazonn"
-                       android:layout_width="153dp"
-                       android:layout_height="97dp"
+                       android:layout_width="144dp"
+                       android:layout_height="100dp"
+                       android:layout_gravity="center"
+                       android:background="@drawable/circle_green"
+                       android:backgroundTint="#9C27B0"
+                       android:gravity="center"
+                       android:outlineProvider="background"
+                       android:padding="5dp"
                        android:text="Estado del Corazon"
-                       android:textSize="20dp"
+                       android:textSize="15dp"
                        android:textStyle="bold" />
 
 
@@ -139,8 +150,8 @@
     android:layout_height="wrap_content">
 
                <LinearLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="177dp"
+                   android:layout_width="191dp"
+                   android:layout_height="match_parent"
                    android:background="@drawable/card2_style"
                    android:gravity="center"
                    android:orientation="vertical"
@@ -148,19 +159,24 @@
                    android:paddingVertical="15dp">
 
                    <ImageView
+                       android:id="@+id/cardViewDiente"
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
+                       android:layout_marginBottom="10dp"
                        android:src="@drawable/teeth" />
 
-                   <TextView
-                       android:id="@+id/CirugiadeCorazon"
-                       android:layout_width="69dp"
-                       android:layout_height="wrap_content"
-                       android:layout_marginTop="10dp"
+                   <Button
+                       android:id="@+id/CirugiadeDientes"
+                       android:layout_width="144dp"
+                       android:layout_height="100dp"
+                       android:layout_gravity="center"
+                       android:background="@drawable/circle_green"
+                       android:backgroundTint="#9C27B0"
                        android:gravity="center"
-                       android:text="Cirugia de Dientes"
-                       android:textColor="#000"
-                       android:textSize="20dp"
+                       android:outlineProvider="background"
+                       android:padding="5dp"
+                       android:text="Estado de Dientes"
+                       android:textSize="15dp"
                        android:textStyle="bold" />
 
 
@@ -271,10 +287,18 @@
                 android:background="#00D0B7B7"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:src="@drawable/heart"
-                    android:layout_height="50dp"/>
+                <Button
+                    android:id="@+id/cardiologistButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/heart"
+                    android:backgroundTint="#9C27B0"
+                    android:foreground="@drawable/heart"
+                    android:gravity="center"
+                    android:outlineProvider="background"
+                    android:padding="5dp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
